@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="riku_hiruta">
+    <title>在庫管理システム</title>
+    <link rel="stylesheet" href="style.css" id="cs">
+    <link rel="icon" type="image/x-icon" href="./icon/icon_for_favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div class="login_form_all">
+          <div class="login_form_left">
+            <div class="login_form_title">
+              <div class="h_area">
+                <h1>
+                  <p class="h1_sub">情報通信工学科実験室</p>
+                  <p class="main_title2">在庫管理システム</p>
+                  <p class="main_title2">ログインフォーム</p>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="login_form_right">
+            <div class="login_input">
+              <form action="./purchase/index.html" method="post" class="login_form">
+                <h2>LOGIN</h2>
+                <div class="input_staff_number">
+                  <p class="named_ID">STAFF NUMBER</p>
+                  <input type="number" name="staff_number" value="" maxlength="5" step="1" class="FormOfms">
+                </div>
+                <div class="input_password">
+                  <p class="named_ID">PASSWORD</p>
+                  <input type="password" name="password" value="" class="FormOfms">
+                </div>
+                <button type="submit" value="Login" class="login_button">Login</button>
+                <p class="signup_message">パスワードを忘れた方は<a href="./membership/signup.html">こちら</a></p>
+                <p class="signup_message">アカウントを登録していない方は<a href="./membership/signup.html">こちら</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
