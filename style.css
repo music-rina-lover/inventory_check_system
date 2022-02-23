@@ -1,0 +1,172 @@
+/* 共通部分 ------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+  color: #432;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  /* additional */
+  background-image: url(./photo/for_background_04.jpg);
+  background-size: cover;
+}
+main {
+  margin-top: 0;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: -80px;
+  box-sizing: border-box;
+  /* additional */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+li {
+  list-style: none;
+}
+a {
+  /* text-decoration: none; */
+}
+.wrapper{
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  align-content: center;
+}
+
+/* メイン部分 ---------------------------------------- */
+
+.login_form_all {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto 0;
+  display: flex;
+}
+.login_form_left {
+  width: 50%;
+  display: flex;
+}
+.login_form_title {
+  width: 300px;
+  height: 400px;
+  margin: auto 0 auto auto;
+  padding: 0 25px;
+  background-color: #e95884;
+  color: #000;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  box-shadow: 3px 3px #ccc;
+}
+.h_area {
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+}
+h1 p {
+  color: #fff;
+  font-family: "Noto Sans JP";
+}
+.h1_sub {
+  font-size: 22px;
+}
+.main_title2 {
+  margin-bottom: 0;
+  font-size: 35px;
+}
+.login_form_right {
+  width: 50%;
+  display: flex;
+}
+.login_input {
+  width: 300px;
+  height: 400px;
+  margin: auto auto auto 0;
+  padding: 0 25px;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 3px 3px #ccc;
+}
+.login_form {
+  max-height: 100%;
+  box-sizing: border-box;
+}
+.named_ID {
+  margin-top: 5px;
+  font-size: 12px;
+  font-family: 'Segoe UI';
+  text-align: left;
+}
+h2 {
+  margin-bottom: 5px;
+  padding-top: 20px;
+  font-size: 28px;
+  text-align: center;
+  font-family: 'Segoe UI';
+}
+input {
+  border: none;
+  outline: none;
+  color: #000;
+  margin: 0 auto;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.FormOfms {
+  height: 28px;
+  width: 300px;
+  margin: 10px 0;
+  padding-left: 14px;
+  transition: all 0.2s ease;
+  border-radius: 28px;
+  font-size: 100%;
+  box-shadow: 0 0 4px #aaa;
+  box-sizing: border-box;
+}
+.FormOfms:focus {
+  transform: scale(1.05, 1.05);
+  transition: all 0.2s ease;
+}
+.login_button {
+  width: 40%;
+  height: 28px;
+  margin: 40px auto 30px;
+  padding: 5px 20px;
+  text-align: center;
+  background-color: #fff;
+  color: #00b4b6;
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 4px #aaa;
+  box-sizing: border-box;
+}
+.signup_message {
+  padding-bottom: 7px;
+  font-family: "Noto Sans JP";
+}
+.signup_message a {
+  /* border-bottom: solid 1px #000; */
+  color: #00213b;
+  transition: 0.3s;
+}
+.signup_message a:hover {
+  color: #00b4b6;
+  transition: 0.3s;
+}
