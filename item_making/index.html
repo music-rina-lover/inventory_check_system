@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="riku_hiruta">
+    <title>在庫管理システム</title>
+    <link rel="stylesheet" href="style.css" id="cs">
+    <link rel="icon" type="image/x-icon" href="../icon/icon_for_favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/for_account.js"></script>
+    <script type="text/javascript" src="../js/menu_select.js"></script>
+    <script type="text/javascript" src="../js/additional_tag_form.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="page_header" id="page_header">
+        <h1>
+          <a href="../purchase/index.html">
+            <p class="h1_sub main_title">情報通信工学科実験室</p>
+            <p class="main_title2">在庫管理システム</p>
+          </a>
+        </h1>
+        <div class="header_menu">
+          <div class="shopping_cart">
+            <a href="only_header_footer.html">
+              <div class="shopping_cart_first">
+                <img src="../icon/shopping_cart_icon.png" alt="shopping_cart" class="shopping_cart_icon">
+              </div>
+              <div class="shopping_cart_number"> <!-- 追加 -->
+                <p class="shopping_cart_amount">1</p>
+              </div>
+            </a>
+          </div>
+          <div class="notification_button">
+            <a href="#"> <!---  このアドレスはとりまね  --->
+              <div class="notification_top">
+                <img src="../icon/notification_icon.png" alt="notification" class="notification_icon">
+                <div class="notification_number">
+                  <p class="notification_amount">99+</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="for_my_account">
+            <div class="../account_img" id="account_img">
+              <img src="../icon/profile.jpg" alt="my_photo" class="profile_img" id="profile_img">
+              <div class="for_account" id="for_account">
+                <ul class="for_my_account_ul" id="for_my_account_ul">
+                  <li><a href="#">マイページ</a></li>
+                  <li><a href="#">登録内容修正</a></li>
+                  <li><a href="../login.html">ログアウト</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="item_resist_box">
+          <form class="resist_info" action="index.html" method="post">
+            <p class="main_resist_title">Item Resistration</p>
+            <div class="resist_all">
+              <div class="resist_left_div">
+                <!--- image upload  ---->
+                <p class="named_ID named_ID_image">商品画像</p>
+                <div class="for_preview_image">
+                  <img src="../icon/profile.jpg" alt="photo preview">
+                </div>
+                <div class="input_file">
+                  <label for="img_file_upload" class="file_upload">
+                    <p>+ 写真を選ぶ</p>
+                    <input type="file" name="item_picture" id="img_file_upload" class="img_file_upload">
+                  </label>
+                </div>
+              </div>
+              <div class="resist_right_div">
+                <!--- 商品名の入力  ---->
+                <p class="named_ID named_ID_noncaution">商品名<span class="required_mark">&nbsp;*</span> </p>
+                <input type="text" name="staff_number" value="" class="FormOfms" placeholder="例) セラミック抵抗 470[Ω]">
+                <p class="caution_message"></p>
+
+                <!--- 型番の入力  ---->
+                <p class="named_ID">型番<span class="required_mark">&nbsp;*</span> </p>
+                <input type="text" name="submit_model_number" value="" class="FormOfms" placeholder="例) RD25S 470K">
+                <p class="caution_message"></p>
+
+                <!--- 値段入力  ---->
+                <p class="named_ID">価格<span class="required_mark">&nbsp;*</span> </p>
+                <div class="number_with">
+                  <p>&yen;</p>
+                  <input type="number" name="submit_price" value="" step="1" class="FormOfms FormOfms_num" placeholder="例) 30000">
+                </div>
+                <p class="caution_message"></p>
+
+                <!--- 初期数量入力  ---->
+                <p class="named_ID">在庫数<span class="required_mark">&nbsp;*</span> </p>
+                <input type="number" name="submit_price" value="" step="1" class="FormOfms FormOfms_num" placeholder="例) 100">
+                <p class="caution_message"></p>
+
+                <!--- URL入力  ---->
+                <p class="named_ID">URL<span class="required_mark">&nbsp;*</span> </p>
+                <input type="url" name="submit_url" value="" class="FormOfms">
+                <p class="caution_message"></p>
+
+                <!--- 学年学科、科目名の入力  ---->
+                <p class="named_ID">学年学科・科目名<span class="required_mark">&nbsp;*</span> </p>
+                <select class="grade_selection" id="grade_selection" onchange="createMenu(this.value)">
+                  <option disabled selected hidden>学年学科を選択</option> <!-- 追加 -->
+                  <option value="1EC">ワークショップ</option>
+                  <option value="2EC">情報通信基礎実験</option>
+                  <option value="3EC">情報通信工学実験</option>
+                  <option value="4EC">情報通信プロジェクト(4EC)</option>
+                  <option value="2NC01">情報通信基礎実験Ⅰ</option>
+                  <option value="2NC02">情報通信基礎実験Ⅱ</option>
+                  <option value="3NC01">情報通信工学実験Ⅰ</option>
+                  <option value="3NC02">情報通信工学実験Ⅱ</option>
+                  <option value="4NC">情報通信プロジェクト(4NC)</option>
+                  <option value="management_room">管理室内</option>
+                </select>
+                <select class="menuList List_selection" name="menuList" id="menuList">
+                  <option disabled selected hidden>科目名を選択</option> <!-- 追加 -->
+                </select>
+                <p class="caution_message"></p>
+
+                <!--- タグ情報の追加  ---->
+                <p class="named_ID named_ID_noncaution">商品タグ</p>
+                <div id="form_area" class="form_area">
+                  <div class="tag_per" id="tag_per_0">
+                    <div class="form_area_first" id="form_area_first_0">
+                      <p id="form_icon_0">●</p>
+                    </div>
+                    <input type="text" name="submit_tag" value=""
+                    id="tag_form_0" placeholder="例：抵抗" class="submit_tag">
+                    <button id="0" onclick="deleteBtn(this)" class="delete_tag_form"><p id="remove_icon_0">×</p></button>
+                  </div>
+                </div>
+                <button onclick="addForm()" class="additional_tag_button"><p>+ タグ追加</p></button>
+
+                <!--- 詳細情報入力  ---->
+                <p class="named_ID named_ID_noncaution">商品説明</p>
+                <textarea name="submit_details"
+                 placeholder="例) 1EC ワークショップで使用。年間に約1億個使う予定。ひるたくんも高校時代から愛用している抵抗値で汎用性が非常に高い。"
+                 rows="5" class="detail_box"></textarea>
+
+              </div>
+            </div>
+            <!--- 最終登録ボタン  ---->
+            <div class="final_resister">
+              <button type="submit" name="button" class="button_item_submit" onclick="location.href='./confirm/index.html'">
+                確認画面へ
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer class="footer" id="footer">(c) 2021 Kenshin Sasaki, Riku hiruta.</footer>
+    </div>
+  </body>
+</html>

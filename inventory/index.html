@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="riku_hiruta">
+    <title>在庫管理システム</title>
+    <link rel="stylesheet" href="style.css" id="cs">
+    <link rel="icon" type="image/x-icon" href="../icon/icon_for_favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/grade_group_theme.js"></script>
+    <script type="text/javascript" src="../js/for_account.js"></script>
+    <script type="text/javascript" src="../js/number_change.js"></script>
+    <script type="text/javascript" src="../js/for_create_item.js"></script> <!-- 追加 -->
+    <script type="text/javascript" src="../js/select_item_amount.js"></script>
+    <script type="text/javascript" src="../js/for_notification.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="page_header" id="page_header">
+        <h1>
+          <a href="#">
+            <p class="h1_sub main_title">情報通信工学科実験室</p>
+            <p class="main_title2">在庫管理システム</p>
+          </a>
+        </h1>
+        <div class="header_menu">
+          <div class="notification_button">
+            <a href="#"> <!---  このアドレスはとりまね  --->
+              <div class="notification_top">
+                <img src="../icon/notification_icon.png" alt="notification" class="notification_icon">
+                <div class="notification_number">
+                  <p class="notification_amount">99+</p>
+                </div>
+              </div>
+            </a>
+            <div class="notification_message_div">
+              <div class="notification_message_div_bg">
+                <ul>
+                  <li>
+                    <div class="notification_message_all mes_my">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date purchase_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>HIRUTA RIKU さんが</p>
+                          <p>4点&nbsp;1,000円分の商品を購入しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]&nbsp;を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date inventory_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]&nbsp;10個の消費を確認し、登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date inventory_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]&nbsp;10個の納入を確認し、登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notification_message_all mes_other">
+                      <div class="notification_message_date_all">
+                        <div class="notification_message_date resist_trigger">
+                          <div class="notification_message_date_inside">
+                            <p class="event_year">2021</p>
+                            <hr>
+                            <p class="event_date">03/14</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification_message">
+                        <div class="notification_message_inside">
+                          <p>SASAKI KENSHIN さんが</p>
+                          <p>セラミック抵抗 470[Ω]を登録しました。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="for_my_account">
+            <div class="../account_img" id="account_img">
+              <img src="../icon/profile.jpg" alt="my_photo" class="profile_img" id="profile_img">
+              <div class="for_account" id="for_account">
+                <ul class="for_my_account_ul" id="for_my_account_ul">
+                  <li><a href="../account/index.html">マイページ</a></li>
+                  <li><a href="../account_edit/index.html">登録内容修正</a></li>
+                  <li><a href="../login.html">ログアウト</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="buy_consume_bar">
+          <nav class="select_buy_consume">
+            <ul>
+              <li class="select_buy">
+                <a href="../purchase/index.html" id="select_buy">
+                  <span class="changing_english">PURCHASE</span>
+                  <span class="changing_japanese">&nbsp;購入</span>
+                </a>
+              </li>
+              <li class="select_consume">
+                <a href="#" id="select_consume">
+                  <span class="changing_english ch_white">INVENTORY</span>
+                  <span class="changing_japanese ch_white">&nbsp;在庫管理</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <p class="main_products_title">Items</p>
+        <div class="page_of_main">
+          <aside class="category_division" id="aside_bar">
+            <ul class="division_of_allitem">
+              <li><a href="#">All Items</a></li>
+              <li><a href="#">New Items</a></li>
+            </ul>
+            <p class="category_division_title">Category</p>
+            <ul class="before_grade_division">
+              <div class="s_01">
+                <!---  1EC  -------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">1EC</a></li>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">ワークショップ</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_1ec01" id="theme_division_1ec01">
+                    <ul>
+                      <li><a href="#">電源回路の製作</a></li>
+                      <li><a href="#">抵抗回路の製作</a></li>
+                      <li><a href="#">LANケーブルの作成</a></li>
+                      <li><a href="#">コンデンサの測定実験</a></li>
+                      <li><a href="#">トランジスタの測定実験</a></li>
+                      <li><a href="#">論理回路の基礎実験</a></li>
+                      <li><a href="#">Arduinoの実習</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!---  2EC  ------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">2EC</a></li>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信基礎実験</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_2ec" id="theme_division_2ec">
+                    <ul>
+                      <li><a href="#">ディジタル技術の基礎</a></li>
+                      <li><a href="#">増幅回路基礎</a></li>
+                      <li><a href="#">回路網の基礎</a></li>
+                      <li><a href="#">周波数と周波数特性の基礎</a></li>
+                      <li><a href="#">RLCの実験</a></li>
+                      <li><a href="#">Web演習</a></li>
+                      <li><a href="#">ロジックの基礎</a></li>
+                      <li><a href="#">パソコン組立</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!---  3EC  -------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">3EC</a></li>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信工学実験</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_3ec" id="theme_division_3ec">
+                      <ul>
+                        <li><a href="#">シリアル通信</a></li>
+                        <li><a href="#">ディジタル信号処理</a></li>
+                        <li><a href="#">振幅変調とその検波</a></li>
+                        <li><a href="#">OPアンプ</a></li>
+                        <li><a href="#">電波の基礎</a></li>
+                        <li><a href="#">論理回路</a></li>
+                        <li><a href="#">光ファイバーの伝送特性</a></li>
+                        <li><a href="#">表示デバイス</a></li>
+                        <li><a href="#">通信用ケーブルの伝送特性</a></li>
+                        <li><a href="#">ネットワーク構築</a></li>
+                        <li><a href="#">組込みプログラミング</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <!---  4EC  --------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">4EC</a></li>
+                <div class="accordion_header_4c"><a href="#aside_bar" class="a_color_select">情報通信プロジェクト</a></div>
+                <!---  2NC  ---------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">2NC</a></li>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信基礎実験&nbsp;Ⅰ</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_2nc01" id="theme_division_2nc01">
+                    <ul>
+                      <li><a href="#">RLCの実験</a></li>
+                      <li><a href="#">ディジタル技術の基礎</a></li>
+                      <li><a href="#">ネットワークの基礎</a></li>
+                      <li><a href="#">パソコン組立</a></li>
+                      <li><a href="#">CRTオシロスコープの実験</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信基礎実験&thinsp;Ⅱ</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_2nc02" id="theme_division_2nc02">
+                    <ul>
+                      <li><a href="#">増幅回路基礎</a></li>
+                      <li><a href="#">電波の基礎</a></li>
+                      <li><a href="#">マイコン基礎</a></li>
+                      <li><a href="#">回路網の実験</a></li>
+                      <li><a href="#">周波数特性の基礎</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!---  3NC  ------------------------------------------------------------------------------------------>
+                <li class="before_grade_division_li"><a href="#">3NC</a></li>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信工学実験&nbsp;Ⅰ</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_3nc01" id="theme_division_3nc01">
+                    <ul>
+                      <li><a href="#">液晶素子の作製とその評価</a></li>
+                      <li><a href="#">電波の基礎</a></li>
+                      <li><a href="#">OPアンプ</a></li>
+                      <li><a href="#">振幅変調とその検波</a></li>
+                      <li><a href="#">ルータネットワーク構築</a></li>
+                      <li><a href="#">組込みプログラミング</a></li>
+                      <li><a href="#">ディジタル信号処理</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accordion_menu">
+                  <div class="accordion_header">
+                    <div><a href="#aside_bar" class="a_color_select">情報通信工学実験&thinsp;Ⅱ</a></div>
+                    <div class="menu_icon">◀</div>
+                  </div>
+                  <div class="accordion_inner theme_division theme_division_3nc02" id="theme_division_3nc02">
+                    <ul>
+                      <li><a href="#">シリアル通信</a></li>
+                      <li><a href="#">論理回路</a></li>
+                      <li><a href="#">ディジタル信号処理</a></li>
+                      <li><a href="#">VPNとネットワークセキュリティ</a></li>
+                      <li><a href="#">光ファイバーの伝送特性</a></li>
+                      <li><a href="#">ケーブルの伝送特性</a></li>
+                      <li><a href="#">AIの基礎</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!---  4NC  ---------------------------------------------------------------------------------------->
+                <li class="before_grade_division_li"><a href="#">4NC</a></li>
+                <div class="accordion_header_4c"><a href="#aside_bar" class="a_color_select">情報通信プロジェクト</a></div>
+                <!---  管理室内  ----------------------------------------------------------------------------------->
+                <li class="before_grade_division_li before_grade_division_li_final"><a href="#">通信管理室</a></li>
+                <!-------------------------------------------------------------------------------------------------->
+              </div>
+            </ul>
+          </aside>
+          <article class="main_products">
+            <div class="name_with_search_bar">
+              <div class="item_category_name">
+                <p>All Items
+                  <span class="category_span_first">2NC</span>
+                  <span> &nbsp;>&nbsp; 情報通信工学実験Ⅱ</span>
+                  <span> &nbsp;>&nbsp; VPNとネットワークセキュリティ</span>
+                </p>
+              </div>
+              <div class="search_bar">
+                <form class="search_bar_form" action="index.html" method="post">
+                  <input type="search" name="search" placeholder="Search..." class="search_text">
+                  <button type="submit" class="search_decision"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+            <div class="select_item_amount_all">
+              <p class="item_amount_dsp">表示件数&nbsp;1～10件&nbsp;(100件中)</p>
+              <div class="select_item_amount_div_all">
+                <p>表示件数</p>
+                <form action="index.html" method="post">
+                  <div class="select_item_amount_div">
+                    <p class="select_item_amount_p" id="select_item_amount_p">
+                      <span class="select_item_amount_p_span" id="select_item_amount_p_span">10</span>件
+                      &emsp;<i class="fas fa-angle-down"></i>
+                    </p>
+                    <ul class="select_menu" id="select_menu">
+                      <li class="select_item_amount_number selected"><span class="number">10</span>件</li>
+                      <li class="select_item_amount_number"><span class="number">15</span>件</li>
+                      <li class="select_item_amount_number"><span class="number">20</span>件</li>
+                    </ul>
+                    <input type="hidden" name="display_amount" value="10" id="select_item_amount_number_input">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <ul class="select_items">
+              <li>
+                <div class="for_table_image">
+                  <a href="../item_detail/index.html">
+                    <img src="../photo/01.JPG" alt="No Image">
+                  </a>
+                </div>
+                <div class="products_title_tag">
+                  <div class="products_title"><a href="../item_detail/index.html">セラミック抵抗 470[Ω]</a></div>
+                  <div class="products_model_number">RD25S 470K</div>
+                  <div class="products_discription">
+                    1EC ワークショップで使用。年間に約1億個使う予定。ひるたくんも高校時代から愛用している抵抗値で汎用性が非常に高い。
+                  </div>
+                  <!-- change -->
+                  <div class="products_tag_all">
+                    <div class="products_tag">
+                      <!--- タグは最大で6つ  ---->
+                      <!--- 1  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;1EC</p></a>
+                      </div>
+                      <!--- 2  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;情報通信プロジェクト</p></a>
+                      </div>
+                      <!--- 3  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;VPNとネットワークセキュリティ</p></a>
+                      </div>
+                      <!--- 4  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;抵抗</p></a>
+                      </div>
+                      <!--- 5  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;LED</p></a>
+                      </div>
+                      <!--- 6  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;春物</p></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <form class="price_number_form" action="index.html" method="post">
+                  <div class="products_amount">
+                    <div class="products_amount_div">
+                      <p>在庫数量</p>
+                      <p class="amount_num">1,000</p>
+                    </div>
+                  </div>
+                  <div class="amount_change_button">
+                    <input type="button" name="minus" value="－" data-cal="-1" data-target=".amount_change_01" class="amount_button amount_change">
+                    <input type="number" name="amount" value="0" step="1" class="FormOfms amount_change_01" data-min="0" data-max="999"></input>
+                    <input type="button" name="plus" value="＋" data-cal="1" data-target=".amount_change_01" class="amount_button amount_change">
+                  </div>
+                  <div class="submit_button">
+                    <div class="inventory_input">
+                      <div class="inventory_input_button">
+                        <button type="submit" name="button" class="button_cartin button_cartin_in">
+                          <p>納&nbsp;入<i class="fas fa-plus-circle"></i></p>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="inventory_output">
+                      <div class="inventory_output_button">
+                        <button type="submit" name="button" class="button_cartin button_cartin_out">
+                          <p>消&nbsp;費<i class="fas fa-minus-circle"></i></p>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <a href="../item_detail/index.html">
+                    <img src="../photo/02.png" alt="No Image">
+                  </a>
+                </div>
+                <div class="products_title_tag">
+                  <div class="products_title"><a href="../item_detail/index.html">セラミック抵抗 470[Ω]</a></div>
+                  <div class="products_model_number">RD25S 470K</div>
+                  <div class="products_discription">
+                    1EC ワークショップで使用。年間に約1億個使う予定。ひるたくんも高校時代から愛用している抵抗値で汎用性が非常に高い。
+                  </div>
+                  <!-- change -->
+                  <div class="products_tag_all">
+                    <div class="products_tag">
+                      <!--- タグは最大で6つ  ---->
+                      <!--- 1  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;1EC</p></a>
+                      </div>
+                      <!--- 2  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;情報通信プロジェクト</p></a>
+                      </div>
+                      <!--- 3  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;VPNとネットワークセキュリティ</p></a>
+                      </div>
+                      <!--- 4  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;抵抗</p></a>
+                      </div>
+                      <!--- 5  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;LED</p></a>
+                      </div>
+                      <!--- 6  ---->
+                      <div class="tag_per" id="tag_per_0">
+                        <a href="#"><p class="submit_tag">#&thinsp;春物</p></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <form class="price_number_form" action="index.html" method="post">
+                  <div class="products_amount">
+                    <div class="products_amount_div">
+                      <p>在庫数量</p>
+                      <p class="amount_num">1,000</p>
+                    </div>
+                  </div>
+                  <div class="amount_change_button">
+                    <input type="button" name="minus" value="－" data-cal="-1" data-target=".amount_change_02" class="amount_button amount_change">
+                    <input type="number" name="amount" value="0" step="1" class="FormOfms amount_change_02" data-min="0" data-max="999">
+                    <input type="button" name="plus" value="＋" data-cal="1" data-target=".amount_change_02" class="amount_button amount_change">
+                  </div>
+                  <div class="submit_button">
+                    <div class="inventory_input">
+                      <div class="inventory_input_button">
+                        <button type="submit" name="button" class="button_cartin button_cartin_in">
+                          <p>納&nbsp;入<i class="fas fa-plus-circle"></i></p>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="inventory_output">
+                      <div class="inventory_output_button">
+                        <button type="submit" name="button" class="button_cartin button_cartin_out">
+                          <p>消&nbsp;費<i class="fas fa-minus-circle"></i></p>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/03.png" alt="No Image">
+                </div>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/04.png" alt="No Image">
+                </div>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/05.png" alt="No Image">
+                </div>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/06.JPG" alt="No Image">
+                </div>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/07.png" alt="No Image">
+                </div>
+              </li>
+              <li>
+                <div class="for_table_image">
+                  <img src="../photo/08.jpg" alt="No Image">
+                </div>
+              </li>
+            </ul>
+            <div class="for_pagenation_div">
+              <ul class="for_pagenation_ul">
+                <li class="for_pagenation_li"><a href="#"><i class="fas fa-chevron-left"></i></a></li>
+                <li class="for_pagenation_li"><a href="#">1</a></li>
+                <li class="for_pagenation_li"><a href="#">2</a></li>
+                <li class="for_pagenation_li"><a href="#">3</a></li>
+                <li class="for_pagenation_li for_pagenation_li_selected"><a href="#">4</a></li>
+                <li class="for_pagenation_li"><a href="#">5</a></li>
+                <li class="for_pagenation_li"><a href="#">6</a></li>
+                <li class="for_pagenation_li"><a href="#">7</a></li>
+                <li class="for_pagenation_li"><a href="#">8</a></li>
+                <li class="for_pagenation_li"><a href="#">9</a></li>
+                <li class="for_pagenation_li"><a href="#">10</a></li>
+                <li class="for_pagenation_li"><a href="#"><i class="fas fa-chevron-right"></i></a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="for_pagetop">
+            <p class="for_pagetop_icon">
+              <a href="#"><i class="fas fa-angle-up"></i></a>
+            </p>
+            <p><a href="#">PAGE TOP</a></p>
+        </div>
+        <div class="for_new_item_making"> <!-- 追加 -->
+          <a href="../item_making_refix/index.html">
+            <div class="for_item_making_div">
+              <img src="../icon/new_item_icon.png" alt="creativity" class="create_item_icon">
+            </div>
+          </a>
+        </div>
+      </main>
+      <footer class="footer" id="footer"><p>Copyright 2021 Kenshin Sasaki, Riku hiruta.</p></footer>
+    </div>
+  </body>
+</html>

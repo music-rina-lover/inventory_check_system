@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="riku_hiruta">
+    <title>在庫管理システム</title>
+    <link rel="stylesheet" href="style.css" id="cs">
+    <link rel="icon" type="image/x-icon" href="../../icon/icon_for_favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../../js/for_account.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="page_header" id="page_header">
+        <h1>
+          <a href="../../purchase/index.html">
+            <p class="h1_sub main_title">情報通信工学科実験室</p>
+            <p class="main_title2">在庫管理システム</p>
+          </a>
+        </h1>
+        <div class="header_menu">
+          <div class="shopping_cart">
+            <a href="only_header_footer.html">
+              <div class="shopping_cart_first">
+                <img src="../../icon/shopping_cart_icon.png" alt="shopping_cart" class="shopping_cart_icon">
+              </div>
+              <div class="shopping_cart_number"> <!-- 追加 -->
+                <p class="shopping_cart_amount">1</p>
+              </div>
+            </a>
+          </div>
+          <div class="notification_button">
+            <a href="#"> <!---  このアドレスはとりまね  --->
+              <div class="notification_top">
+                <img src="../../icon/notification_icon.png" alt="notification" class="notification_icon">
+                <div class="notification_number">
+                  <p class="notification_amount">99+</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="for_my_account">
+            <div class="../account_img" id="account_img">
+              <img src="../../icon/profile.jpg" alt="my_photo" class="profile_img" id="profile_img">
+              <div class="for_account" id="for_account">
+                <ul class="for_my_account_ul" id="for_my_account_ul">
+                  <li><a href="#">マイページ</a></li>
+                  <li><a href="#">登録内容修正</a></li>
+                  <li><a href="../login.html">ログアウト</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="item_resist_box">
+          <p class="main_resist_title">最終確認画面<!---Comfirm Item Resistration Information---></p>
+          <div class="resist_all">
+            <div class="resist_left_div">
+              <!--- image upload  ---->
+              <div class="for_preview_image">
+                <img src="../../photo/470R.jpg" alt="photo preview">
+              </div>
+            </div>
+            <div class="resist_right_div">
+              <div class="name_price">
+                <!--- 商品名  ---->
+                <p class="item_name">セラミック抵抗 470[Ω]</p>
+                <!--- 値段  ---->
+                <p class="price_of_items">&yen;&nbsp;30,000</p>
+              </div>
+              <div class="amount_cart">
+                <div class="amount_cart_first">
+                  <!--- 初期数量  ---->
+                  <p class="amount_of_items_title">在庫数量</p>
+                  <p class="amount_of_items">300</p>
+                </div>
+              </div>
+              <p class="info_title">製品情報</p>
+              <div class="machanic_info">
+                <!--- 型番  ---->
+                <p>型番：RD25S 470K</p>
+                <!--- URL  ---->
+                <p>URL：https://akizukidenshi.com/catalog/g/gR-25471/</p>
+              </div>
+              <div class="division_menu_tag">
+                <!--- 学年学科、科目名  ---->
+                <div class="grade_division_menu">
+                  <p class="grade_division">
+                    <span>カテゴリー：</span>
+                    <span>1EC</span>
+                    &nbsp;>&nbsp;
+                    <span>ワークショップ</span>
+                    &nbsp;>&nbsp;
+                    <span>Arduinoの実習</span>
+                  </p>
+                </div>
+                <!--- タグ  ---->
+                <div class="concern_tag">
+                  <p class="concern_tag_title">関連タグ</p>
+                  <div id="form_area" class="form_area">
+                    <!--- タグは最大で6つ  ---->
+                    <!--- 1  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">1EC</p>
+                    </div>
+                    <!--- 2  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">情報通信プロジェクト</p>
+                    </div>
+                    <!--- 3  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">VPNとネットワークセキュリティ</p>
+                    </div>
+                    <!--- 4  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">抵抗</p>
+                    </div>
+                    <!--- 5  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">LED</p>
+                    </div>
+                    <!--- 6  ---->
+                    <div class="tag_per" id="tag_per_0">
+                      <div class="form_area_first" id="form_area_first_0">
+                        <p id="form_icon_0">●</p>
+                      </div>
+                      <p class="submit_tag">春物</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--- 詳細情報  ---->
+              <p class="item_discription">商品説明</p>
+              <p class="detail_of_items">1EC ワークショップで使用。年間に約1億個使う予定。ひるたくんも高校時代から愛用している抵抗値で汎用性が非常に高い。</p>
+
+            </div>
+          </div>
+          <!--- 確認後の編集ボタン、最終登録ボタン  ---->
+          <div class="final_resister">
+            <button type="submit" name="button" class="button_item_submit">
+              作成へ
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer" id="footer">(c) 2021 Kenshin Sasaki, Riku hiruta.</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="riku_hiruta">
+    <title>在庫管理システム</title>
+    <link rel="stylesheet" href="style.css" id="cs">
+    <link rel="icon" type="image/x-icon" href="../icon/icon_for_favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/for_account.js"></script>
+    <script type="text/javascript" src="../js/modal_window.js"></script>
+    <script type="text/javascript" src="../js/number_change.js"></script>
+    <script type="text/javascript" src="../js/select_timezone.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="page_header" id="page_header">
+        <h1>
+          <a href="../purchase/index.html">
+            <p class="h1_sub main_title">情報通信工学科実験室</p>
+            <p class="main_title2">在庫管理システム</p>
+          </a>
+        </h1>
+        <div class="header_menu">
+          <div class="shopping_cart">
+            <a href="only_header_footer.html">
+              <div class="shopping_cart_first">
+                <img src="../icon/shopping_cart_icon.png" alt="shopping_cart" class="shopping_cart_icon">
+              </div>
+              <div class="shopping_cart_number"> <!-- 追加 -->
+                <p class="shopping_cart_amount">1</p>
+              </div>
+            </a>
+          </div>
+          <div class="notification_button">
+            <a href="#"> <!---  このアドレスはとりまね  --->
+              <div class="notification_top">
+                <img src="../icon/notification_icon.png" alt="notification" class="notification_icon">
+                <div class="notification_number">
+                  <p class="notification_amount">99+</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="for_my_account">
+            <div class="account_img" id="account_img">
+              <img src="../icon/profile.jpg" alt="my_photo" class="profile_img" id="profile_img">
+              <div class="for_account" id="for_account">
+                <ul class="for_my_account_ul" id="for_my_account_ul">
+                  <li><a href="#">マイページ</a></li>
+                  <li><a href="#">登録内容修正</a></li>
+                  <li><a href="../login.html">ログアウト</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="item_resist_box">
+          <p class="main_resist_title">My Account Edition</p>
+          <div class="resist_all">
+            <div class="change_img_div">
+              <div class="for_preview_image">
+                <label for="change_img" class="change_img_lav">
+                  <img src="../icon/profile.jpg" alt="photo preview">
+                  <input type="file" name="profile_img" value="" id="change_img" class="change_img_input">
+                </label>
+              </div>
+              <div class="plus_mark">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+            <div class="account_main_div">
+              <div class="account_main_div_first">
+                <input type="text" name="account_name" value="" class="account_name">
+                <input type="text" name="account_name" value="" class="account_name">
+              </div>
+              <!-- <p class="account_name">Hiruta Riku</p> -->
+              <div class="account_main_div_second">
+                <p class="staff_num">Staff Number :
+                <input type="number" name="staff_num" value="" class="staff_num staff_num_input">
+                <!-- <p class="staff_num">Staff Number : 90811</p> -->
+              </div>
+            </div>
+            <div class="account_personal_info">
+              <div class="personal_info_title">
+                <p><i class="fas fa-user"></i>&nbsp;Personal Infomation</p>
+              </div>
+              <div class="personal_info_div">
+                <div class="mail_address_div">
+                  <p><i class="fas fa-envelope"></i>&nbsp;E-mail&nbsp;:&emsp;</p>
+                  <input type="email" name="mail_address" value="" class="mail_address_input">
+                </div>
+                <div class="timezone_div">
+                  <p><i class="far fa-clock"></i>&nbsp;Job timezone&nbsp;:&emsp;</p>
+                  <div class="select_timezone_all">
+                    <form action="index.html" method="post">
+                      <div class="select_timezone_div">
+                        <p class="select_timezone_p" id="select_timezone_p">
+                          <span class="select_timezone_p_span" id="select_timezone_p_span">Night Time(PM 5:00 - PM 9:00)</span>
+                          &emsp;<i class="fas fa-angle-down"></i>
+                        </p>
+                        <ul class="select_menu" id="select_menu">
+                          <li class="select_job_timezone selected">Day Time(AM 10:10 - PM 5:10)</li>
+                          <li class="select_job_timezone">Night Time(PM 5:00 - PM 9:00)</li>
+                        </ul>
+                        <input type="hidden" name="display_amount" value="NIGHTTIME" id="select_timezone_input">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <p class="administrator_p"><i class="fas fa-users-cog"></i>&nbsp;Administrator Rights&nbsp;:&emsp;Assigned</p>
+              </div>
+            </div>
+          </div>
+          <!--- キャンセルボタン、最終登録ボタン  ---->
+          <div class="final_resister">
+            <button type="submit" name="button" class="button_item_submit_01" id="final_resister_02">
+              <i class="fa fa-mail-reply "></i>&emsp;キャンセル
+            </button>
+            <button type="submit" name="button" class="button_item_submit_02">
+              更新
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer" id="footer">(c) 2021 Kenshin Sasaki, Riku hiruta.</footer>
+    </div>
+  </body>
+</html>
